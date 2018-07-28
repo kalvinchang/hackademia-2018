@@ -14,6 +14,9 @@ const NUM_LEVELS = 20;
 let level = 0;
 let progress = level / NUM_LEVELS;
 
+//let percent = document.getElementById('percent');
+let fill = document.getElementById('barFill');
+
 //server stuff
 
 //starting the game
@@ -44,4 +47,10 @@ hint.addEventListener('click', function(event) {
   //light up individual LEDs
 
   //update progress
+  level++;
+  progress = level / NUM_LEVELS;
+  //percent.textContent = progress + '%';
+  fill.style.height = Math.min(progress * 50, 50) + 'vh'; //max = 50
 });
+
+//end game - reset

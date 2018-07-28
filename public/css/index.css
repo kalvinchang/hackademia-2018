@@ -10,3 +10,26 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.progress-bar {
+  height: 50vh;
+  position: absolute;
+  right: 5vw;
+  display: flex;
+  justify-content: center;
+  border: 2px solid white;
+  height: 50vh;
+  width: 3vh;
+  border-radius: 20px;
+}
+
+#barFill {
+  height: 2vh;
+  background-color: #fff;
+  width: inherit;
+  border: 2px solid white;
+  border-radius: 20px;
+  vertical-align: -50vh;
+  position: absolute;
+  bottom: 0;
+}
