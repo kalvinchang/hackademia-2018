@@ -7,6 +7,7 @@ const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
 
 const publicPath = path.join(__dirname, '../public');
+process.setMaxListeners(0);
 
 //communication with Arduino
 const five = require('johnny-five');
@@ -18,25 +19,24 @@ app.get('/', function(req, res) {
   res.sendFile(publicPath + '/index.html');
 });
 
-io.on('connection', function(socket) {
-  console.log('player connected');
 
-  //get socket - signal to light up LED
-  socket.on('light up', function(msg) {
-    console.log('light up LED');
-    //light up LED
-  });
+board.on('ready', function() {
+  var led = new five.Led(13);
+
+  io.sockets.on('connection', function(socket) {
+    console.log('player connected');
+
+    //get socket - signal to light up LED
+    socket.on('light up', function(msg) {
+      console.log('light up LED');
+      //light up LED
+      led.toggle();
+    });
+  })
 });
 
 http.listen(port, function() {
   console.log('listening on *:3000');
 })
 
-
-board.on('ready', function() {
-  this.pinMode(13, this.MODES.OUTPUT);
-
-  this.loop(500, () => {
-    this.digitalWrite(13, this.pins[13].value ? 0 : 1);
-  });
-});
+//broadcasting: https://socket.io/get-started/chat/#Broadcasting
