@@ -10,7 +10,7 @@ let hint = document.getElementById('hint');
 let hints = [];
 
 //player info
-const NUM_LEVELS = 20;
+const NUM_LEVELS = 32;
 let level = 0;
 let progress = level / NUM_LEVELS;
 
@@ -50,7 +50,7 @@ hint.addEventListener('click', function(event) {
   level++;
   progress = level / NUM_LEVELS;
   //percent.textContent = progress + '%';
-  fill.style.height = Math.min(progress * 50, 50) + 'vh'; //max = 50
+  fill.style.height = Math.min(progress * 50, 50) + 'vh'; //TODO: animation
 });
 
 //end game - reset

@@ -1,0 +1,9 @@
+{
+  "name": "botbox",
+  "version": "0.0.1",
+  "description": "Blackbox but with hardware",
+  "dependencies": {
+    "express": "^4.16.3",
+    "johnny-five": "^0.15.0"
+  }
+}
