@@ -1,3 +1,5 @@
+//client side stuff
+
 let startScreen = document.getElementById('start');
 let tutorialScreen = document.getElementById('tutorial');
 let gameScreen = document.getElementById('game');
@@ -16,8 +18,6 @@ let progress = level / NUM_LEVELS;
 
 //let percent = document.getElementById('percent');
 let fill = document.getElementById('barFill');
-
-//server stuff
 
 //starting the game
 startBtn.addEventListener('click', function(event) {
