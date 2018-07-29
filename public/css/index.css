@@ -3,6 +3,22 @@ body {
   overflow: hidden;
 }
 
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/*animation: name duration delay pause-state iteration-count*/
+.start-btn{
+  opacity: 0;
+  animation: fadeUp 0.45s 0.1s forwards 1;
+}
 .screen {
   background-color: #000;
   height: 100vh;
