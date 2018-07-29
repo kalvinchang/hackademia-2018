@@ -26,7 +26,10 @@ let Light = [[0,0,0,5,5,0,0,0],
              [0,0,0,5,5,0,0,0],
              [0,0,0,5,5,0,0,0]];
 
-function sendBit(aData) {
+
+
+board.on('ready', function() {
+	function sendBit(aData) {
 	this.digitalWrite(DATA, aData);
 	this.digitalWrite(CLOCK, 1);
 	this.digitalWrite(CLOCK, 0);
@@ -110,8 +113,6 @@ function ShowLight() {
     }
   }
 }
-
-board.on('ready', function() {
   this.pinMode(13, this.MODES.OUTPUT);
   this.pinMode(DATA, this.MODES.OUTPUT);
   this.pinMode(LATCH, this.MODES.OUTPUT);
