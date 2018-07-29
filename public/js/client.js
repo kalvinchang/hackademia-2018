@@ -46,6 +46,7 @@ hint.addEventListener('click', function(event) {
   hint.setAttribute('src', 'assets/bulb-lit.png');
 
   //light up individual LEDs
+  socket.emit('light up');
 
   //update progress
   level++;
