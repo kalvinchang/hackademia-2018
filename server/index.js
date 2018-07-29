@@ -19,7 +19,7 @@ app.get('/', function(req, res) {
   res.sendFile(publicPath + '/index.html');
 });
 
-
+//must use localhost to connect to Arduino
 board.on('ready', function() {
   var led = new five.Led(13);
 
@@ -30,7 +30,11 @@ board.on('ready', function() {
     socket.on('light up', function(msg) {
       console.log('light up LED');
       //light up LED
-      led.toggle();
+      led.on();
+
+      setTimeout(function() {
+        led.off();
+      }, 2000);
     });
   })
 });
