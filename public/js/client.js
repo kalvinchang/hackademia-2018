@@ -1,4 +1,5 @@
-//client side stuff
+//client side JS
+var socket = io(); //client-side version of socket.io
 
 let startScreen = document.getElementById('start');
 let tutorialScreen = document.getElementById('tutorial');
