@@ -1,3 +1,6 @@
+//client side JS
+var socket = io(); //client-side version of socket.io
+
 let startScreen = document.getElementById('start');
 let tutorialScreen = document.getElementById('tutorial');
 let gameScreen = document.getElementById('game');
@@ -16,8 +19,6 @@ let progress = level / NUM_LEVELS;
 
 //let percent = document.getElementById('percent');
 let fill = document.getElementById('barFill');
-
-//server stuff
 
 //starting the game
 startBtn.addEventListener('click', function(event) {
